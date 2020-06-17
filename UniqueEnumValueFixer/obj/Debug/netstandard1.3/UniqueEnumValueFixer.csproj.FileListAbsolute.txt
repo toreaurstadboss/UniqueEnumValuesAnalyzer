@@ -1,0 +1,13 @@
+C:\Users\toaurs-he\source\repos\UniqueEnumValueFixer\UniqueEnumValueFixer\bin\Debug\netstandard1.3\tools\install.ps1
+C:\Users\toaurs-he\source\repos\UniqueEnumValueFixer\UniqueEnumValueFixer\bin\Debug\netstandard1.3\tools\uninstall.ps1
+C:\Users\toaurs-he\source\repos\UniqueEnumValueFixer\UniqueEnumValueFixer\bin\Debug\netstandard1.3\UniqueEnumValueFixer.deps.json
+C:\Users\toaurs-he\source\repos\UniqueEnumValueFixer\UniqueEnumValueFixer\bin\Debug\netstandard1.3\UniqueEnumValueFixer.dll
+C:\Users\toaurs-he\source\repos\UniqueEnumValueFixer\UniqueEnumValueFixer\bin\Debug\netstandard1.3\UniqueEnumValueFixer.pdb
+C:\Users\toaurs-he\source\repos\UniqueEnumValueFixer\UniqueEnumValueFixer\obj\Debug\netstandard1.3\UniqueEnumValueFixer.Resources.resources
+C:\Users\toaurs-he\source\repos\UniqueEnumValueFixer\UniqueEnumValueFixer\obj\Debug\netstandard1.3\UniqueEnumValueFixer.csproj.GenerateResource.cache
+C:\Users\toaurs-he\source\repos\UniqueEnumValueFixer\UniqueEnumValueFixer\obj\Debug\netstandard1.3\UniqueEnumValueFixer.AssemblyInfoInputs.cache
+C:\Users\toaurs-he\source\repos\UniqueEnumValueFixer\UniqueEnumValueFixer\obj\Debug\netstandard1.3\UniqueEnumValueFixer.AssemblyInfo.cs
+C:\Users\toaurs-he\source\repos\UniqueEnumValueFixer\UniqueEnumValueFixer\obj\Debug\netstandard1.3\UniqueEnumValueFixer.csproj.CoreCompileInputs.cache
+C:\Users\toaurs-he\source\repos\UniqueEnumValueFixer\UniqueEnumValueFixer\obj\Debug\netstandard1.3\UniqueEnumValueFixer.dll
+C:\Users\toaurs-he\source\repos\UniqueEnumValueFixer\UniqueEnumValueFixer\obj\Debug\netstandard1.3\UniqueEnumValueFixer.pdb
+C:\Users\toaurs-he\source\repos\UniqueEnumValueFixer\UniqueEnumValueFixer\obj\Debug\netstandard1.3\UniqueEnumValueFixer.csprojAssemblyReference.cache

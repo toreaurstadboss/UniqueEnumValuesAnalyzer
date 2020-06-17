@@ -1,0 +1,68 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\toaurs-he\\source\\repos\\UniqueEnumValueFixer\\UniqueEnumValueFixer\\UniqueEnumValueFixer.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\toaurs-he\\source\\repos\\UniqueEnumValueFixer\\UniqueEnumValueFixer\\UniqueEnumValueFixer.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\toaurs-he\\source\\repos\\UniqueEnumValueFixer\\UniqueEnumValueFixer\\UniqueEnumValueFixer.csproj",
+        "projectName": "UniqueEnumValueFixer",
+        "projectPath": "C:\\Users\\toaurs-he\\source\\repos\\UniqueEnumValueFixer\\UniqueEnumValueFixer\\UniqueEnumValueFixer.csproj",
+        "packagesPath": "C:\\Users\\toaurs-he\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\toaurs-he\\source\\repos\\UniqueEnumValueFixer\\UniqueEnumValueFixer\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\toaurs-he\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard1.3"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://dotnet.myget.org/F/roslyn/api/v3/index.json": {},
+          "https://hemit.myget.org/F/opplan/auth/e3f9b8bd-7cd5-4abf-ad6f-c3aa74b11488/api/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard1.3": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard1.3": {
+          "dependencies": {
+            "Microsoft.CodeAnalysis.Analyzers": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.6.2, )"
+            },
+            "Microsoft.CodeAnalysis.CSharp.Workspaces": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.10.0, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.6.1, )",
+              "autoReferenced": true
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
