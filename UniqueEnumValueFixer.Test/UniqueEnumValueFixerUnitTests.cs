@@ -14,7 +14,7 @@ namespace UniqueEnumValueFixer.Test
 
         //No diagnostics expected to show up
         [TestMethod]
-        public void TestMethod1()
+        public void Verify_No_Diagnostic_For_Empty_String()
         {
             var test = @"";
 
@@ -22,7 +22,7 @@ namespace UniqueEnumValueFixer.Test
         }
 
         [TestMethod]
-        public void TestMethod2()
+        public void Verify_Diagnostic_NotCreated_For_Enum_With_No_Duplicate_Values()
         {
             var test = @"
    using System;
@@ -50,13 +50,68 @@ namespace UniqueEnumValueFixer.Test
     PatientNotFound = 14,
 }
             ";
-
-
             VerifyCSharpDiagnostic(test);
         }
 
         [TestMethod]
-        public void TestMethod3()
+        public void Verify_CodeFix_Created_For_Enum_With_Duplicate_Values()
+        {
+            var test = @"using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+    using System.Diagnostics;
+   
+    public enum ImportFaultType{
+    [EnumMember]
+    Undefined = 0,
+    [EnumMember]
+    Unspecified = 1,
+    [EnumMember]
+    DuplicateForm = 2,
+    [EnumMember]
+    MappingError = 3,
+    [EnumMember]
+    PatientSearchError = 4,
+    [EnumMember]
+    MissingMainFormInImportSet = 5,
+    [EnumMember]
+    MissingMainFormInRegistry = 6,
+    [EnumMember]
+    PatientNotFound = 4,}
+            ";
+            var adjustedTestCodeAfterFix = @"using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+    using System.Diagnostics;
+   
+//TODO: Remove use of duplicate enum members pointing to same value?
+public enum ImportFaultType{
+    [EnumMember]
+    Undefined = 0,
+    [EnumMember]
+    Unspecified = 1,
+    [EnumMember]
+    DuplicateForm = 2,
+    [EnumMember]
+    MappingError = 3,
+    [EnumMember]
+    PatientSearchError = 4,
+    [EnumMember]
+    MissingMainFormInImportSet = 5,
+    [EnumMember]
+    MissingMainFormInRegistry = 6,
+    [EnumMember]
+    PatientNotFound = 4,}
+            ";
+            VerifyCSharpFix(test, adjustedTestCodeAfterFix);
+        }
+
+        [TestMethod]
+        public void Verify_Diagnostic_Created_For_Enum_With_Duplicate_Values()
         {
             var test = @"
    using System;

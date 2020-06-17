@@ -1,10 +1,11 @@
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011">
   <Metadata>
-    <Identity Id="UniqueEnumValueFixer.d588713b-52f2-4feb-8ac4-4d3826f5a49b" Version="1.0" Language="en-US" Publisher="toaurs-he" />
+    <Identity Id="UniqueEnumValueFixer.d588713b-52f2-4feb-8ac4-4d3826f5a49b" Version="1.0" Language="en-US" Publisher="ToreAurstadIT" />
     <DisplayName>UniqueEnumValueFixer</DisplayName>
     <Description xml:space="preserve">This diagnostic extension is built upon a sample from the Roslyn .NET Compiler Platform. 
 
 This is a sample diagnostic extension for the .NET Compiler Platform ("Roslyn").</Description>
+    <MoreInfo>https://github.com/toreaurstadboss/UniqueEnumValuesAnalyzer</MoreInfo>
     <Icon>binoculars.PNG</Icon>
     <Tags>Roslyn Sample Code Analysis Enum Duplicate</Tags>
   </Metadata>
