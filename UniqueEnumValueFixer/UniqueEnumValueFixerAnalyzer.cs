@@ -3,7 +3,6 @@ using Microsoft.CodeAnalysis.Diagnostics;
 using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
-using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
 
@@ -35,53 +34,52 @@ namespace UniqueEnumValueFixer
 
         private static void AnalyzeSymbol(SymbolAnalysisContext context)
         {
-              // TODO: Replace the following code with your own analysis, generating Diagnostic objects for any issues you find
-              try
-              {
-                  var namedTypeSymbol = (INamedTypeSymbol) context.Symbol;
-                  if (namedTypeSymbol.EnumUnderlyingType != null)
-                  {
-                      var valueListForEnum = new List<Tuple<string, int>>();
-                      //Debugger.Launch();
-                      //Debugger.Break();
+            try
+            {
+                var namedTypeSymbol = (INamedTypeSymbol)context.Symbol;
+                if (namedTypeSymbol.EnumUnderlyingType != null)
+                {
+                    var valueListForEnum = new List<Tuple<string, int>>();
+                    //Debugger.Launch();
+                    //Debugger.Break();
                     var typeResolved = context.Compilation.GetTypeByMetadataName(namedTypeSymbol.MetadataName) ?? context.Compilation.GetTypeByMetadataName(namedTypeSymbol.ToString());
-                      if (typeResolved != null)
-                      {
-                          foreach (var member in typeResolved.GetMembers())
-                          {
-                              var c = member.GetType().GetRuntimeProperty("ConstantValue");
-                              if (c == null)
-                              {
-                                  c = member.GetType().GetRuntimeProperties().FirstOrDefault(prop =>
-                                      prop != null && prop.Name != null &&
-                                      prop.Name.Contains("IFieldSymbol.ConstantValue"));
-                                  if (c == null)
-                                  {
-                                      continue;
-                                  }
-                              }
+                    if (typeResolved != null)
+                    {
+                        foreach (var member in typeResolved.GetMembers())
+                        {
+                            var c = member.GetType().GetRuntimeProperty("ConstantValue");
+                            if (c == null)
+                            {
+                                c = member.GetType().GetRuntimeProperties().FirstOrDefault(prop =>
+                                    prop != null && prop.Name != null &&
+                                    prop.Name.Contains("IFieldSymbol.ConstantValue"));
+                                if (c == null)
+                                {
+                                    continue;
+                                }
+                            }
 
-                              var v = c.GetValue(member) as int?;
-                              if (v.HasValue)
-                              {
-                                  valueListForEnum.Add(new Tuple<string, int>(member.Name, v.Value));
-                              }
-                          }
-                          if (valueListForEnum.GroupBy(v => v.Item2).Any(g => g.Count() > 1))
-                          {
-                              var diagnostic = Diagnostic.Create(Rule, namedTypeSymbol.Locations[0],
-                                  namedTypeSymbol.Name);
-                              context.ReportDiagnostic(diagnostic);
-                          }
-                      }
-                  }
-              }
-              catch (Exception err)
-              {
-              
+                            var v = c.GetValue(member) as int?;
+                            if (v.HasValue)
+                            {
+                                valueListForEnum.Add(new Tuple<string, int>(member.Name, v.Value));
+                            }
+                        }
+                        if (valueListForEnum.GroupBy(v => v.Item2).Any(g => g.Count() > 1))
+                        {
+                            var diagnostic = Diagnostic.Create(Rule, namedTypeSymbol.Locations[0],
+                                namedTypeSymbol.Name);
+                            context.ReportDiagnostic(diagnostic);
+                        }
+                    }
+                }
+            }
+            catch (Exception err)
+            {
 
-                  Console.WriteLine(err);
-              }
+
+                Console.WriteLine(err);
+            }
 
         }
 
