@@ -76,8 +76,6 @@ namespace UniqueEnumValueFixer
             }
             catch (Exception err)
             {
-
-
                 Console.WriteLine(err);
             }
 
